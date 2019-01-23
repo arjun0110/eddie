@@ -16,6 +16,145 @@ public class HomePage_RRS extends ProjectMethods{
 		PageFactory.initElements(driver,this);
 	}	
 	
+	@FindBy(how=How.XPATH,using="//*[@class='active_rrs']")
+	private WebElement rrs;
+	
+	public HomePage_RRS verifyrrs()
+	{
+		refresh();
+		try {
+			pageScrollUp();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		verifyDisplayed(rrs);
+		highLighterMethod(driver, rrs);
+		return this;
+	}
+	
+	@FindBy(how=How.XPATH,using="//*[@class='default_kids']")
+	private WebElement rrskid;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='KanaLiveChatButton2']")
+	private WebElement chat;
+	
+	public HomePage_RRS verifyrrskids()
+	{
+		refresh();
+		verifyDisplayed(rrskid);
+		highLighterMethod(driver, rrskid);
+		verifyDisplayed(chat);
+		highLighterMethod(driver, chat);
+		return this;
+	}
+	
+
+	@FindBy(how=How.XPATH,using="//*[contains(text(),'Stores')]")
+	private WebElement stores;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='rrsglobalnav-mens']/p")
+	private WebElement men;
+	
+	@FindBy(how=How.XPATH,using="//*[@id=\"rrsglobalnav-womens\"]/p")
+	private WebElement women;
+	
+	@FindBy(how=How.XPATH,using="//*[@href='/rrs/kids/index.jsp?cm_sp=nav-_-kids-_-kids']")
+	private WebElement kids;
+	
+	@FindBy(how=How.XPATH,using="//*[@href='/rrs/accessories/?cm_sp=nav-_-accessories-_-accessories']")
+	private WebElement accessories;
+	
+	@FindBy(how=How.XPATH,using="//*[@id=\"rrsglobalnav-nutrition\"]/a")
+	private WebElement nutrition;
+	
+	@FindBy(how=How.XPATH,using="//*[@id='rrsglobalnav-brands']/a")
+	private WebElement brand;
+	
+	@FindBy(how=How.XPATH,using="//*[@href='/rrs/outlet/?cm_sp=nav-_-sale-_-sale']")
+	private WebElement sale;
+	
+	@FindBy(how=How.XPATH,using="//*[@href='/rrs/product/shoe-dog.jsp?cm_sp=nav-_-shoedog-_-shoefinder']")
+	private WebElement fitfinder;
+	
+	@FindBy(how=How.XPATH,using="//*[@href='/rrs/products/RAC55/']")
+	private WebElement vip;
+	
+	public HomePage_RRS verifymenu()
+	{
+		
+		verifyDisplayed(men);
+		highLighterMethod(driver, men);
+		
+
+		verifyDisplayed(women);
+		highLighterMethod(driver, women);
+
+		verifyDisplayed(kids);
+		highLighterMethod(driver, kids);
+
+		verifyDisplayed(accessories);
+		highLighterMethod(driver, accessories);
+
+		verifyDisplayed(nutrition);
+		highLighterMethod(driver, nutrition);
+
+		verifyDisplayed(brand);
+		highLighterMethod(driver, brand);
+
+		verifyDisplayed(sale);
+		highLighterMethod(driver, sale);
+
+		verifyDisplayed(fitfinder);
+		highLighterMethod(driver, fitfinder);
+
+		verifyDisplayed(vip);
+		highLighterMethod(driver, vip);
+		
+		return this;
+	}
+	
+	public HomePage_RRS verifystores()
+	{
+		
+		verifyDisplayed(stores);
+		highLighterMethod(driver, stores);
+		return this;
+	}
+	
+	@FindBy(how=How.XPATH,using="//*[@class='cart']")
+	private WebElement cart;
+	
+	public HomePage_RRS verifycart()
+	{
+		
+		verifyDisplayed(cart);
+		highLighterMethod(driver, cart);
+		return this;
+	}
+	
+	@FindBy(how=How.XPATH,using="//*[contains(text(),'My Account')]")
+	private WebElement acc;
+	
+	public HomePage_RRS verifyaccount()
+	{
+		
+		verifyDisplayed(acc);
+		highLighterMethod(driver, acc);
+		return this;
+	}
+	
+	@FindBy(how=How.XPATH,using="//*[@class='call-time']")
+	private WebElement call;
+	
+	public HomePage_RRS verifycontact()
+	{
+		
+		verifyDisplayed(call);
+		highLighterMethod(driver, call);
+		return this;
+	}
+	
 	@FindBy(how=How.XPATH,using="//div[@id='specialist2']/div/form/div/input[@value='SEARCH']")
 	private WebElement searchbutton;
 	
@@ -24,6 +163,7 @@ public class HomePage_RRS extends ProjectMethods{
 		verifyDisplayed(searchbutton);
 		return this;
 	}
+	
 	
 	@FindBy(how=How.XPATH,using="//*[contains(text(),'FIT FINDER')]")
 	private WebElement FIRELE;
