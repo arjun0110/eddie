@@ -11,7 +11,7 @@ public class TestalltheLinksinHomePage  extends ProjectMethods{
 	public void setData() {
 		testCaseName="Verify all the links in home page";
 		testDescription="Verify whether all the links are opening properly in homepage";
-		testNodes="PDP";
+		testNodes="Links";
 		category="Smoke";
 		authors="arjun";
 		browserName="chrome";
