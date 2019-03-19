@@ -52,9 +52,9 @@ public interface WdMethods {
 		public void pressescape();
 public void popupissue() throws AWTException;
 		public void pageScroll () throws AWTException;
-		public void pageScrolltwice () throws AWTException;
+		public void pageScrollbottom () throws AWTException;
 		public void pageScrollUp() throws AWTException; 
-		
+		public void pageScrolltwice() throws AWTException;
 		public void refresh();
 		
 		public void FluentWait();
@@ -91,6 +91,7 @@ public void popupissue() throws AWTException;
 		
 		public void mouseHove4r(WebElement ele);
 		
+		public void rightclick(WebElement ele);
 		
 }
 

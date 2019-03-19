@@ -76,6 +76,7 @@ public class SeMethods extends Reporter implements WdMethods{
 			DesiredCapabilities dc = new DesiredCapabilities();
 			dc.setBrowserName(browser);
 			dc.setPlatform(Platform.WINDOWS);
+	
 			
 			// this is for grid run
 			if(bRemote)
@@ -87,8 +88,9 @@ public class SeMethods extends Reporter implements WdMethods{
 				if(browser.equalsIgnoreCase("chrome")){
 					ChromeOptions options = new ChromeOptions();
 					options.addArguments("--disable-notifications");
+					options.addArguments("user-agent={Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36 eddiebauer/testenvironment/1.0}");
 					System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
-					 driver =new ChromeDriver(options);
+					 driver =new ChromeDriver (options);
 				}else {
 					System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
 					driver = new FirefoxDriver();
@@ -491,7 +493,22 @@ takeSnap();
 	}
 
 	
-	public void pageScrolltwice () throws AWTException{
+	public void pageScrollbottom () throws AWTException{
+		((JavascriptExecutor) driver)
+	     .executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		
+		
+		takeSnap();
+		
+	}
+	public void rightclick(WebElement ele) {
+	
+	Actions se = new Actions(driver);
+	se.moveToElement(ele);
+	se.contextClick(ele).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+	}
+	public void pageScrolltwice() throws AWTException
+	{
 		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);

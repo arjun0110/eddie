@@ -20,10 +20,10 @@ public abstract class Reporter {
 	public String testCaseName, testNodes, testDescription, category, authors;
 	@AfterSuite
 	public void zipFolder() {
-		ZipUtil.pack(new File("./reports/images"), new File("./reports/images.zip"));
+		ZipUtil.pack(new File("./reports/imagesnew"), new File("./reports/imagesnew.zip"));
 	}
 	public void startResult() {
-		html = new ExtentHtmlReporter("./reports/images/stagingreport.html");
+		html = new ExtentHtmlReporter("./reports/images/stagingreportnew.html");
 		html.setAppendExisting(true);		
 		extent = new ExtentReports();		
 		extent.attachReporter(html);	
